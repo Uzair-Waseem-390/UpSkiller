@@ -23,7 +23,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
+    # 'drf_yasg',
     'users',
+    'roadmaps',
 ]
 
 MIDDLEWARE = [
@@ -159,3 +161,10 @@ SIMPLE_JWT = {
 # Profile Picture Settings
 MAX_PROFILE_PICTURE_SIZE = 5 * 1024 * 1024  # 5MB
 ALLOWED_IMAGE_TYPES = ['image/jpeg', 'image/png', 'image/jpg']
+
+
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+GEMINI_MODEL = "gemini-2.5-flash"
+
+MAX_ROADMAPS_PER_USER = 50
+ROADMAP_GENERATION_TIMEOUT = 120    # seconds

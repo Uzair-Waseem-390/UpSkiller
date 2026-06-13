@@ -1,0 +1,10 @@
+from django.apps import AppConfig
+
+class RoadmapsConfig(AppConfig):
+    default_auto_field = 'django.db.models.BigAutoField'
+    name = 'roadmaps'
+    verbose_name = 'Roadmaps Management'
+    
+    def ready(self):
+        # Import signals if any
+        pass
