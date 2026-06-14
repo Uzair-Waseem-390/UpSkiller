@@ -34,7 +34,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     protected void hideLoading() {
-        if (progressDialog != null && progressDialog.isShowing()) {
+        if (progressDialog != null && progressDialog.isShowing() && !isFinishing() && !isDestroyed()) {
             progressDialog.dismiss();
         }
     }

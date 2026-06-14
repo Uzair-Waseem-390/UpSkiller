@@ -9,6 +9,7 @@
 
     <application
         android:allowBackup="true"
+        android:usesCleartextTraffic="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
@@ -41,12 +42,15 @@
         <activity android:name=".ui.main.MainActivity"     android:exported="false"
             android:theme="@style/Theme.Upskiller.NoActionBar" />
 
-        <activity android:name=".ui.roadmap.RoadmapDetailActivity" android:exported="false" />
+        <activity android:name=".ui.roadmap.RoadmapDetailActivity" android:exported="false"
+            android:theme="@style/Theme.Upskiller.NoActionBar" />
 
         <activity android:name=".ui.profile.EditProfileActivity"   android:exported="false"
+            android:theme="@style/Theme.Upskiller.NoActionBar"
             android:windowSoftInputMode="adjustResize" />
 
-        <activity android:name=".ui.skills.SkillsActivity"         android:exported="false" />
+        <activity android:name=".ui.skills.SkillsActivity"         android:exported="false"
+            android:theme="@style/Theme.Upskiller.NoActionBar" />
 
     </application>
 

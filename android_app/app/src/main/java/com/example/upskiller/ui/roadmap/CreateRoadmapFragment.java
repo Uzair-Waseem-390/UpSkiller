@@ -54,10 +54,11 @@ public class CreateRoadmapFragment extends Fragment {
         String level = getSelectedLevel();
 
         showLoading();
-        ApiClient.get(requireContext())
+        ApiClient.getLongTimeout(requireContext())
                  .createRoadmap(new RoadmapCreateRequest(skill, level))
                  .enqueue(new ApiCallback<RoadmapResponse>() {
                      @Override public void onSuccess(RoadmapResponse body) {
+                         if (!isAdded() || getContext() == null) return;
                          hideLoading();
                          Intent intent = new Intent(getContext(), RoadmapDetailActivity.class);
                          intent.putExtra(RoadmapDetailActivity.EXTRA_ROADMAP_ID, body.getRoadmap().getId());
@@ -65,6 +66,7 @@ public class CreateRoadmapFragment extends Fragment {
                          etSkill.setText("");
                      }
                      @Override public void onError(String message) {
+                         if (!isAdded() || getView() == null) return;
                          hideLoading();
                          Snackbar.make(requireView(), message, Snackbar.LENGTH_LONG).show();
                      }

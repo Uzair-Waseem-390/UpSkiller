@@ -62,12 +62,14 @@ public class RoadmapDetailActivity extends BaseActivity {
         ApiClient.get(this).getRoadmapDetail(roadmapId)
                  .enqueue(new ApiCallback<Roadmap>() {
                      @Override public void onSuccess(Roadmap body) {
+                         if (isFinishing() || isDestroyed()) return;
                          hideLoading();
                          currentRoadmap = body;
                          bindHeader(body);
                          bindPhases(body);
                      }
                      @Override public void onError(String message) {
+                         if (isFinishing() || isDestroyed()) return;
                          hideLoading();
                          showError(message);
                      }
@@ -100,6 +102,7 @@ public class RoadmapDetailActivity extends BaseActivity {
                  .markTopicComplete(topic.getId(), new TopicCompleteRequest(isChecked))
                  .enqueue(new ApiCallback<TopicCompleteResponse>() {
                      @Override public void onSuccess(TopicCompleteResponse body) {
+                         if (isFinishing() || isDestroyed()) return;
                          currentRoadmap = body.getRoadmap();
                          bindHeader(currentRoadmap);
                          if (currentRoadmap.getPhases() != null) {
@@ -107,6 +110,7 @@ public class RoadmapDetailActivity extends BaseActivity {
                          }
                      }
                      @Override public void onError(String message) {
+                         if (isFinishing() || isDestroyed()) return;
                          showError(message);
                          // Revert optimistic update
                          topic.setCompleted(!isChecked);

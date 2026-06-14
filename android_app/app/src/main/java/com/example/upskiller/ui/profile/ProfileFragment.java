@@ -74,6 +74,7 @@ public class ProfileFragment extends Fragment {
         ApiClient.get(requireContext()).getProfile()
                  .enqueue(new ApiCallback<AuthResponse>() {
                      @Override public void onSuccess(AuthResponse body) {
+                         if (!isAdded() || getContext() == null) return;
                          if (body.getUser() != null) {
                              SessionManager.getInstance(requireContext()).saveUser(body.getUser());
                              bindUser(body.getUser());
@@ -87,6 +88,7 @@ public class ProfileFragment extends Fragment {
         ApiClient.get(requireContext()).getSkillStats()
                  .enqueue(new ApiCallback<SkillStatsResponse>() {
                      @Override public void onSuccess(SkillStatsResponse body) {
+                         if (!isAdded() || getView() == null) return;
                          tvTotalSkills.setText(String.valueOf(body.getTotalSkills()));
                          tvBeginner.setText(String.valueOf(body.getBeginner()));
                          tvIntermediate.setText(String.valueOf(body.getIntermediate()));

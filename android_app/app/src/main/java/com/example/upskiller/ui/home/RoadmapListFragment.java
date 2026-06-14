@@ -82,11 +82,13 @@ public class RoadmapListFragment extends Fragment {
 
         call.enqueue(new ApiCallback<List<Roadmap>>() {
             @Override public void onSuccess(List<Roadmap> body) {
+                if (!isAdded() || getView() == null) return;
                 swipeRefresh.setRefreshing(false);
                 adapter.updateData(body);
                 tvEmpty.setVisibility(body.isEmpty() ? View.VISIBLE : View.GONE);
             }
             @Override public void onError(String message) {
+                if (!isAdded() || getView() == null) return;
                 swipeRefresh.setRefreshing(false);
                 tvEmpty.setVisibility(roadmaps.isEmpty() ? View.VISIBLE : View.GONE);
             }
