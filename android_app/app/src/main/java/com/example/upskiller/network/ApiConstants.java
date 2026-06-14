@@ -4,7 +4,8 @@ public final class ApiConstants {
 
     // Change this to your machine's local IP when testing on a physical device.
     // Use 10.0.2.2 for the Android emulator to reach localhost.
-    public static final String BASE_URL = "http://10.0.2.2:8000/";
+    // public static final String BASE_URL = "http://10.0.2.2:8000/";
+    public static final String BASE_URL = "http://192.168.0.113:8000/";
 
     // Users
     public static final String REGISTER       = "api/users/auth/register/";
