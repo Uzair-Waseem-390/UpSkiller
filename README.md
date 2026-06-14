@@ -35,7 +35,7 @@ upskiller/
 | Backend | Django, Django REST Framework |
 | AI Layer | LangGraph + Gemini 2.5 Flash |
 | Frontend | Native Android (Java) |
-| Database | SQLite (Dev) / PostgreSQL (Production) |
+| Database | SQLite |
 
 ---
 
