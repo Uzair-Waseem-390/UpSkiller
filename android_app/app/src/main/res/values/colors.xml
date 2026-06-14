@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1565C0</color>
+    <color name="colorPrimaryDark">#003c8f</color>
+    <color name="colorPrimaryVariant">#1976D2</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorSecondary">#00ACC1</color>
+    <color name="colorOnSecondary">#FFFFFF</color>
+    <color name="colorBackground">#F5F7FA</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="colorError">#B00020</color>
+
+    <!-- Level badge colors -->
+    <color name="colorBeginner">#43A047</color>
+    <color name="colorIntermediate">#FB8C00</color>
+    <color name="colorAdvanced">#E53935</color>
+
+    <color name="colorTextPrimary">#1A1A2E</color>
+    <color name="colorTextSecondary">#666680</color>
+    <color name="colorDivider">#E0E0E0</color>
+</resources>
