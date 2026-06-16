@@ -13,6 +13,7 @@ ALLOWED_HOSTS = [
     "192.168.0.113",
     "127.0.0.1",
     "localhost",
+    "192.168.0.101",
 ]
 
 AUTH_USER_MODEL = 'users.User'
